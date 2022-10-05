@@ -10,7 +10,6 @@ Disclaimer:
 Sources:
 Hiding console -> https://stackoverflow.com/questions/52352526/hiding-a-console-window-for-keylogger-in-c
 
-Author: Clement Dutu
 */
 
 int main()
